@@ -9,14 +9,15 @@ import SwiftUI
 
 struct AddItem: View {
     
-//    @Environment(\.)
-    
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var modelData: ModelData
-    
     
     @State var title: String = ""
     @State var content: String = ""
     @State var createTime: Date = Date()
+    
+    @State private var isAlert: Bool = false
+    @State private var alertTitle: String = "content is emply!"
     
     var body: some View {
         NavigationView {
@@ -40,13 +41,23 @@ struct AddItem: View {
             }
             .padding()
             .navigationTitle("Add a Item")
-            
+            .alert(isPresented: $isAlert, content: getAlert)
         }
         .navigationBarItems(trailing: Button("Save"){
+            if title.isEmpty && content.isEmpty {
+                isAlert = true
+                return
+            }
+            
             print("save success!!!")
             // 保存到items里
             modelData.addItem(title: title, subTitle: "", content: content, time: createTime)
+            presentationMode.wrappedValue.dismiss()
         })
+    }
+    
+    func getAlert() -> Alert {
+        return Alert(title: Text(alertTitle))
     }
 }
 
