@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "生活",
+        "imageName": "folder"
+    },
+    {
+        "id": 2,
+        "name": "工作",
+        "imageName": "laptopcomputer"
+    },
+    {
+        "id": 3,
+        "name": "紧急",
+        "imageName": "star.fill"
+    }
+]

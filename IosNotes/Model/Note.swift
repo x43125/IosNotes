@@ -14,18 +14,7 @@ struct Note: Identifiable, Codable, Hashable {
     var subTitle: String
     var content: String
     var time: Date
-//    var tagId: Int
-    var tag: Tag
-    
-    struct Tag: Identifiable, Codable, Hashable {
-        var id: Int
-        var name: String
-        var imageName: String
-        
-        var image: Image {
-            Image(systemName: imageName)
-        }
-    }
+    var tagId: Int
     
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -33,13 +22,22 @@ struct Note: Identifiable, Codable, Hashable {
         return formatter
     } ()
     
-    init(id: Int, title: String, subTitle: String, content: String, time: Date, tag: Tag) {
+    init() {
+        self.id = 0
+        self.title = ""
+        self.subTitle = ""
+        self.content = ""
+        self.time = Date()
+        self.tagId = 1
+    }
+    
+    init(id: Int, title: String, subTitle: String, content: String, time: Date, tagId: Int) {
         self.id = id
         self.title = title
         self.subTitle = subTitle
         self.content = content
         self.time = time
-        self.tag = tag
+        self.tagId = tagId
     }
     
     init(from decoder: any Decoder) throws {
@@ -48,8 +46,7 @@ struct Note: Identifiable, Codable, Hashable {
         self.title = try container.decode(String.self, forKey: .title)
         self.subTitle = try container.decode(String.self, forKey: .subTitle)
         self.content = try container.decode(String.self, forKey: .content)
-//        self.tagId = try container.decode(Int.self, forKey: .tagId)
-        self.tag = try container.decode(Note.Tag.self, forKey: .tag)
+        self.tagId = try container.decode(Int.self, forKey: .tagId)
         
         let dateString = try container.decode(String.self, forKey: .time)
         
@@ -58,6 +55,5 @@ struct Note: Identifiable, Codable, Hashable {
         } else {
             throw DecodingError.dataCorruptedError(forKey: .time, in: container, debugDescription: "Date format mismatch")
         }
-    }
-    
+    }    
 }

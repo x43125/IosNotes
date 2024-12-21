@@ -5,11 +5,7 @@
         "subTitle": "每周1次",
         "content": "先浇第一盆，再浇第二盆...",
         "time": "2024/12/13 10:00:00",
-        "tag": {
-            "id": 1,
-            "name": "生活",
-            "imageName": "folder"
-        }
+        "tagId": 1
     },
     {
         "id": 1002,
@@ -17,11 +13,7 @@
         "subTitle": "每周2次",
         "content": "先浇第2盆，再浇第3盆...",
         "time": "2024/12/14 10:00:00",
-        "tag": {
-            "id": 1,
-            "name": "生活",
-            "imageName": "folder"
-        }
+        "tagId": 2
     },
     {
         "id": 1003,
@@ -29,11 +21,7 @@
         "subTitle": "每周3次",
         "content": "先浇第3盆，再浇第4盆...",
         "time": "2024/12/15 10:00:00",
-        "tag": {
-            "id": 2,
-            "name": "工作",
-            "imageName": "laptopcomputer"
-        }
+        "tagId": 3
     },
     {
         "id": 1004,
@@ -41,11 +29,7 @@
         "subTitle": "每周4次",
         "content": "先浇第4盆，再浇第5盆...",
         "time": "2024/12/12 10:00:00",
-        "tag": {
-            "id": 3,
-            "name": "紧急",
-            "imageName": "star.fill"
-        }
+        "tagId": 2
     },
     {
         "id": 1005,
@@ -53,11 +37,7 @@
         "subTitle": "每周5次",
         "content": "先浇第5盆，再浇第6盆...",
         "time": "2024/12/12 10:00:00",
-        "tag": {
-            "id": 2,
-            "name": "工作",
-            "imageName": "laptopcomputer"
-        }
+        "tagId": 2
     },
     {
         "id": 1006,
@@ -65,11 +45,7 @@
         "subTitle": "每周6次",
         "content": "先浇第6盆，再浇第7盆...",
         "time": "2024/12/12 10:00:00",
-        "tag": {
-            "id": 2,
-            "name": "工作",
-            "imageName": "laptopcomputer"
-        }
+        "tagId": 1
     },
     {
         "id": 1007,
@@ -77,11 +53,7 @@
         "subTitle": "每周7次",
         "content": "先浇第7盆，再浇第8盆...",
         "time": "2024/12/12 10:00:00",
-        "tag": {
-            "id": 2,
-            "name": "工作",
-            "imageName": "laptopcomputer"
-        }
+        "tagId": 1
     },
     {
         "id": 1008,
@@ -89,10 +61,6 @@
         "subTitle": "每周8次",
         "content": "先浇第8盆，再浇第9盆...",
         "time": "2024/12/12 10:00:00",
-        "tag": {
-            "id": 2,
-            "name": "工作",
-            "imageName": "laptopcomputer"
-        }
+        "tagId": 2
     }
 ]

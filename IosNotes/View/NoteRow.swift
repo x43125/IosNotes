@@ -9,9 +9,13 @@ import SwiftUI
 
 struct NoteRow: View {
     
+    @EnvironmentObject var modelData: ModelData
     var note: Note
     
     var body: some View {
+        // 如果取不到tag则用默认tag
+        let tag = modelData.tagId2Tag[note.tagId] ?? modelData.defaultTag
+        
         VStack(alignment: .leading) {
             Text(note.title)
                 .font(.title3)
@@ -23,7 +27,7 @@ struct NoteRow: View {
             }
             .font(.subheadline)
             .foregroundStyle(.secondary)
-            Label(note.tag.name, systemImage: note.tag.imageName)
+            Label(tag.name, systemImage: tag.imageName)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }        
